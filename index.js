@@ -4,6 +4,7 @@ var express = require("express");
 var jwtsso = require("jwtsso");
 var request = require("request");
 var xtend = require("xtend");
+var url = require("url");
 
 var config = [
     __dirname + "/config.json",
@@ -19,6 +20,7 @@ var config = [
     return xtend(memo, config);
 }, {});
 
+var urlOb = url.parse(config.target);
 console.log("Config", config);
 
 
@@ -107,7 +109,7 @@ app.use(function(req, res, next) {
   req.pipe(request({
       url: targetUrl,
       method: req.method,
-      headers: req.headers,
+      headers: xtend({}, req.headers, { host: urlOb.hostname }),
       pool: {}
   })).pipe(res);
 
