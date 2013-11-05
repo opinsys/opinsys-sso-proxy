@@ -1,6 +1,6 @@
 {
   "name": "opinsys-sso-proxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Restricted web service access using Opinsys SSO",
   "main": "index.js",
   "author": "Esa-Matti Suuronen <esa-matti.suuronen@opinsys.fi>",
