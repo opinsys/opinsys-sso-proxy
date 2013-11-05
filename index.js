@@ -80,7 +80,7 @@ app.use(function(req, res, next) {
 
   var orgOk = config.allowedOrganisationDomains.indexOf(jwt.organisation_domain) !== -1;
   if (!orgOk || jwt.user_type != "admin") {
-    return res.status(401).send("unauthorized");
+    return res.status(401).send("Unauthorized. <a href=/sso-proxy/logout>logout</a>");
   }
 
   var targetUrl = config.target + req.url;
