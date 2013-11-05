@@ -1,4 +1,3 @@
-
 var http = require("http");
 var express = require("express");
 var jwtsso = require("jwtsso");
@@ -38,6 +37,8 @@ app.use(jwtsso(xtend({
    maxAge: 120
 }, config)));
 
+// We use browser Javascript based redirects to support apps that
+// use hash based routing such as Kibana
 app.get("/sso-proxy/jsredirect", function(req, res)  {
   res.render("jsredirect");
 });
@@ -70,7 +71,7 @@ app.get("/sso-proxy/logout", function(req, res) {
     }
 });
 
-// http://10.246.133.118/index.html#/dashboard/file/logstash.json
+
 app.use(function(req, res, next) {
   var jwt = req.session.jwt;
 
