@@ -1,0 +1,13 @@
+Source: opinsys-sso-proxy
+Section: admin
+Priority: extra
+Maintainer: Esa-Matti Suuronen <esa-matti.suuronen@opinsys.fi>
+Build-Depends: debhelper (>= 8), nodejs-bundle, jq
+Standards-Version: 3.9.3
+Homepage: https://github.com/opinsys/opinsys-sso-proxy/
+
+Package: opinsys-sso-proxy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nodejs-bundle
+Description: Restricted web service access using Opinsys SSO
+ Restricted web service access using Opinsys SSO
