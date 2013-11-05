@@ -97,4 +97,6 @@ app.use(function(req, res, next) {
 
 
 var server = http.createServer(app);
-server.listen(1337);
+server.listen(config.port || 1337, function() {
+  console.log("http://localhost:" + server.address().port);
+});
