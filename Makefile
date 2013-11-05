@@ -13,7 +13,6 @@ install: clean-for-install install-dirs
 	cp -a \
 	*.js \
 	*.json \
-	*.html \
 	views \
 	node_modules \
     $(DESTDIR)$(prefix)/lib/node_modules/opinsys-sso-proxy
