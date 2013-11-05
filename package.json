@@ -1,0 +1,15 @@
+{
+  "name": "opinsys-sso-proxy",
+  "version": "0.0.0",
+  "description": "Restricted web service access using Opinsys SSO",
+  "main": "index.js",
+  "author": "Esa-Matti Suuronen <esa-matti.suuronen@opinsys.fi>",
+  "license": "GPLv2",
+  "dependencies": {
+    "jwtsso": "opinsys/node-jwtsso",
+    "express": "~3.4.4",
+    "request": "~2.27.0",
+    "xtend": "~2.1.1",
+    "hbs": "~2.4.0"
+  }
+}
