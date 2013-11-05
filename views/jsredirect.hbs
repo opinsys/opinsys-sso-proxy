@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSO-Proxy redirecting...</title>
+    </head>
+    <body>
+      <p>
+      SSO-Proxy redirecting
+      <script>
+        var lastLocation = window.localStorage.lastLocation || "/";
+        delete window.localStorage.lastLocation;
+        document.write(" to " + lastLocation);
+        window.location = lastLocation;
+      </script>
+      </p>
+    </body>
+</html>

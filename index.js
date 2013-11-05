@@ -36,11 +36,14 @@ app.use(jwtsso(xtend({
    maxAge: 120
 }, config)));
 
+app.get("/sso-proxy/jsredirect", function(req, res)  {
+  res.render("jsredirect");
+});
 
-app.get("/sso-proxy/login", function(req, res, next) {
+app.get("/sso-proxy/login", function(req, res) {
   if (!req.session.jwt) {
     console.log("Requesting JWT");
-    res.requestJwt();
+    res.requestJwt("/sso-proxy/jsredirect");
     return;
   }
 
