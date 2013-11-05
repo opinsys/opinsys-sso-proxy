@@ -77,6 +77,11 @@ app.use(function(req, res, next) {
 
   var orgOk = config.allowedOrganisationDomains.indexOf(jwt.organisation_domain) !== -1;
   if (!orgOk) {
+    console.log(
+      "Unauthorized login. Organisation not in",
+      config.allowedOrganisationDomains,
+      jwt
+    );
     return res.status(401).send(
       "Unauthorized." +
       " Your organisation " + jwt.organisation_domain +
@@ -86,6 +91,7 @@ app.use(function(req, res, next) {
   }
 
   if (jwt.user_type != "admin") {
+    console.log("Unauthorized login. Bad user type.", jwt);
     return res.status(401).send(
       "Only admins can login here. You are only a " + jwt.user_type +
       " <a href=/sso-proxy/logout>logout</a>"
