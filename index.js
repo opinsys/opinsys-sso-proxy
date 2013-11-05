@@ -1,5 +1,4 @@
 
-
 var http = require("http");
 var express = require("express");
 var jwtsso = require("jwtsso");
@@ -18,9 +17,7 @@ var config = [
       throw err;
     }
     return xtend(memo, config);
-}, {
-    target: null
-});
+}, {});
 
 console.log("Config", config);
 
